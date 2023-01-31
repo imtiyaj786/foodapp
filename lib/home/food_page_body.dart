@@ -42,6 +42,7 @@ class _FoodPageBody extends State<FoodPageBody> {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        // Slider Section Here
         Container(
           // color: Colors.redAccent,
           height: Dimensions.pageView,
@@ -52,6 +53,7 @@ class _FoodPageBody extends State<FoodPageBody> {
                 return _buildPageItem(position);
               }),
         ),
+        // Dots Here
         new DotsIndicator(
           dotsCount: 5,
           position: _currentPageValue,
@@ -63,6 +65,8 @@ class _FoodPageBody extends State<FoodPageBody> {
                 borderRadius: BorderRadius.circular(5.0)),
           ),
         ),
+
+        // Popular text Here
       ],
     );
   }
