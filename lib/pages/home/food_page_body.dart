@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:foodapp/utils/colors.dart';
 import 'package:foodapp/utils/dimensions.dart';
+import 'package:foodapp/widgets/app_column.dart';
 import 'package:foodapp/widgets/big_text.dart';
 import 'package:foodapp/widgets/icon_and_text_widget.dart';
 import 'package:foodapp/widgets/small_text.dart';
@@ -125,7 +126,7 @@ class _FoodPageBody extends State<FoodPageBody> {
                           color: Colors.white38,
                           image: DecorationImage(
                               fit: BoxFit.cover,
-                              image: AssetImage("assets/images/food2.jpg"))),
+                              image: AssetImage("assets/image/food1.jpg"))),
                     ),
 
                     // Text Section container
@@ -249,58 +250,9 @@ class _FoodPageBody extends State<FoodPageBody> {
               child: Container(
                 padding: EdgeInsets.only(
                     left: Dimensions.height15, right: 15, top: 15),
-                child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      BigText(text: "Chinese Side"),
-                      SizedBox(
-                        height: Dimensions.height10,
-                      ),
-                      Row(
-                        children: [
-                          Wrap(
-                              children: List.generate(
-                                  5,
-                                  (index) => Icon(
-                                        Icons.star,
-                                        color: AppColors.mainColor,
-                                        size: 15,
-                                      ))),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          SmallText(text: "4.5"),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          SmallText(text: "1287"),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          SmallText(text: "comments")
-                        ],
-                      ),
-                      SizedBox(
-                        height: Dimensions.height20,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          IconAndTextWidget(
-                              iconColor: AppColors.classColor2,
-                              text: "Normal",
-                              icon: Icons.circle_sharp),
-                          IconAndTextWidget(
-                              iconColor: AppColors.classColor,
-                              text: "1.7km",
-                              icon: Icons.location_on),
-                          IconAndTextWidget(
-                              iconColor: AppColors.classColor2,
-                              text: "32min",
-                              icon: Icons.access_alarm_rounded),
-                        ],
-                      ),
-                    ]),
+                child: AppColumn(
+                  text: "Chinese Side",
+                ),
               ),
             ),
           ),
