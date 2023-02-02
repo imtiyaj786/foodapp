@@ -5,6 +5,7 @@ import 'package:foodapp/pages/food/popular_food_detail.dart';
 import 'package:foodapp/pages/food/recommended_food_detail.dart';
 import 'package:foodapp/pages/home/food_page_body.dart';
 import 'package:foodapp/pages/home/main_food_page.dart';
+import 'package:foodapp/routes/route_helper.dart';
 import 'package:get/get.dart';
 import 'helper/dependencies.dart' as dep;
 
@@ -27,10 +28,11 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
-
         primarySwatch: Colors.blue,
       ),
       home: MainFoodPage(),
+      initialRoute: RouteHelper.initial,
+      getPages: RouteHelper.routes,
       // home: MainFoodPage(),
       // home: FoodPageBody(),
       // home: PopularFoodDetail(),
