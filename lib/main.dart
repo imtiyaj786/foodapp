@@ -30,8 +30,8 @@ class MyApp extends StatelessWidget {
         // This is the theme of your application.
         primarySwatch: Colors.blue,
       ),
-      home: MainFoodPage(),
-      initialRoute: RouteHelper.initial,
+      // home: MainFoodPage(),
+      initialRoute: RouteHelper.getInitial(),
       getPages: RouteHelper.routes,
       // home: MainFoodPage(),
       // home: FoodPageBody(),
