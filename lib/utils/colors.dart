@@ -12,4 +12,7 @@ class AppColors {
   static const Color signColor = const Color(0xFFa9a29f);
   static const Color titleColor = const Color(0xFF5c524f);
   static const Color yellowColor = const Color(0xFFffd379);
+
+  static const Color systemGreen = Color.fromARGB(64, 13, 243, 224);
+  static const Color systemPurple = Color.fromRGBO(175, 82, 222, 1);
 }
