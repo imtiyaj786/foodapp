@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:foodapp/Controllers/cart_controller.dart';
 import 'package:foodapp/Controllers/popular_product_controller.dart';
 import 'package:foodapp/Controllers/recommended_product_controller.dart';
@@ -82,6 +80,10 @@ class CartPage extends StatelessWidget {
                       itemCount: _cartList.length,
                       itemBuilder: (_, index) {
                         return Container(
+                          // add
+                          margin:
+                              EdgeInsets.only(bottom: Dimensions.height10 / 2),
+                          // color: Colors.blue,
                           height: Dimensions.height20 * 5,
                           width: double.maxFinite,
                           child: Row(
@@ -155,10 +157,10 @@ class CartPage extends StatelessWidget {
                                           ),
                                           Container(
                                             padding: EdgeInsets.only(
-                                              top: Dimensions.height20,
-                                              bottom: Dimensions.height20,
-                                              left: Dimensions.width20,
-                                              right: Dimensions.width20,
+                                              top: Dimensions.height10,
+                                              bottom: Dimensions.height10,
+                                              left: Dimensions.height10,
+                                              right: Dimensions.height10,
                                             ),
                                             decoration: BoxDecoration(
                                               color: Colors.white,
@@ -269,6 +271,7 @@ class CartPage extends StatelessWidget {
                 GestureDetector(
                   onTap: () {
                     // popularProduct.addItem(product);
+                    cartController.addToHistory();
                   },
                   child: Container(
                     padding: EdgeInsets.only(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodapp/Controllers/cart_controller.dart';
 import 'package:foodapp/Controllers/popular_product_controller.dart';
 import 'package:foodapp/Controllers/recommended_product_controller.dart';
 import 'package:foodapp/pages/food/popular_food_detail.dart';
@@ -22,11 +23,13 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    // whit the help of this we can save storage info
+    Get.find<CartController>().getCartData();
     return GetBuilder<PopularProductController>(builder: (_) {
       return GetBuilder<RecommendedProductController>(builder: (_) {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'Flutter Demo',
+          title: 'Imtiyaj Alam',
           theme: ThemeData(
             // This is the theme of your application.
             primarySwatch: Colors.blue,

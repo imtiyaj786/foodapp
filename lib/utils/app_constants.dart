@@ -1,5 +1,5 @@
 class AppConstants {
-  static const String APP_NAME = "MyFood";
+  static const String APP_NAME = "Aamir";
   static const String APP_VERSION = "1.0.0";
   static const String APP_DESCRIPTION = "Sample Food App";
   static const String APP_COPYRIGHT = "IMTIYAJ";
@@ -15,4 +15,6 @@ class AppConstants {
   static const String CATEGORY_URI = "/api/v1/categories";
   static const String UPLOAD_URL = "/uploads/";
   static const String TOKEN = "imtAlam23";
+  static const String CART_LIST = "cartList";
+  static const String CART_HISTORY_LIST = "cartHistoryList";
 }

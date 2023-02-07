@@ -53,14 +53,14 @@ class _SplashScreenState extends State<SplashScreen>
             child: Center(
               child: Image.asset(
                 "assets/image/applogo.jpg",
-                width: Dimensions.splashImg,
+                width: Dimensions.width45 * 8,
               ),
             ),
           ),
           Center(
             child: BigText(
               text: "𝓣𝓱𝓮 𝓑𝓮𝓼𝓽 𝓕𝓸𝓸𝓭",
-              color: Colors.black,
+              color: Colors.white,
             ),
           ),
         ],
