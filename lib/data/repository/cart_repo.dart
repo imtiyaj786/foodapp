@@ -15,16 +15,20 @@ class CartRepo {
     // sharedPreferences.remove(AppConstants.CART_LIST);
     // sharedPreferences.remove(AppConstants.CART_HISTORY_LIST);
     cart = [];
+    var time = DateTime.now().toString();
     // convert object to string because sharedPreferences only accept String
     // method 1
     // cartList.forEach((element) {
     //   return cart.add(jsonEncode(element));
     // });
     // method 2
-    cartList.forEach((element) => cart.add(jsonEncode(element)));
+    cartList.forEach((element) {
+      element.time = time;
+      return cart.add(jsonEncode(element));
+    });
     sharedPreferences.setStringList(AppConstants.CART_LIST, cart);
     // print(sharedPreferences.getStringList(AppConstants.CART_LIST));
-    getCartList();
+    // getCartList();
   }
 
   List<CartModel> getCartList() {
@@ -67,8 +71,7 @@ class CartRepo {
     removeCart();
     sharedPreferences.setStringList(
         AppConstants.CART_HISTORY_LIST, cartHistory);
-    // print(
-        "The length og history list " + getCartHistoryList().length.toString());
+    // print("length history list " + getCartHistoryList().length.toString());
   }
 
   void removeCart() {
