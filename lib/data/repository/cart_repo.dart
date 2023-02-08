@@ -14,6 +14,7 @@ class CartRepo {
   void addToCartList(List<CartModel> cartList) {
     // sharedPreferences.remove(AppConstants.CART_LIST);
     // sharedPreferences.remove(AppConstants.CART_HISTORY_LIST);
+    // return;
     cart = [];
     var time = DateTime.now().toString();
     // convert object to string because sharedPreferences only accept String
