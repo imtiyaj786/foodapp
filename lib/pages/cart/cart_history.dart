@@ -63,7 +63,7 @@ class CartHistory extends StatelessWidget {
                 AppIcon(
                   icon: Icons.shopping_cart_outlined,
                   iconColor: AppColors.mainColor,
-                  backgroundColor: AppColors.systemPurple,
+                  backgroundColor: Colors.white,
                 ),
               ],
             ),
@@ -95,14 +95,17 @@ class CartHistory extends StatelessWidget {
                                   children: [
                                     // this is (ief) immediate invoked function to show date and time according to our need
                                     (() {
+                                      // ! ERROR -> RangeError (RangeError (index): Invalid value: Not in inclusive range 0..6: 7)
                                       DateTime parseDate = DateFormat(
                                               "yyyy-MM-dd HH:mm:ss")
                                           .parse(getCartHistoryList[listCounter]
                                               .time!);
                                       var inputDate =
                                           DateTime.parse(parseDate.toString());
+
                                       var outputFormat =
-                                          DateFormat("MM/dd/yyyy hh:mm a");
+                                          DateFormat("MM/dd/yyyy hh:mm aa");
+
                                       var outputDate =
                                           outputFormat.format(inputDate);
                                       return BigText(text: outputDate);
@@ -188,6 +191,10 @@ class CartHistory extends StatelessWidget {
                                                     if (getCartHistoryList[j]
                                                             .time ==
                                                         orderTime[i]) {
+                                                      // print(orderTime[i]);
+                                                      print(jsonEncode(
+                                                          getCartHistoryList[
+                                                              j]));
                                                       moreOrder.putIfAbsent(
                                                           getCartHistoryList[j]
                                                               .id!,

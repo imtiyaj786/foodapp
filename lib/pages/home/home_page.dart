@@ -14,13 +14,13 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
   List pages = [
-    const MainFoodPage(),
+    MainFoodPage(),
     Container(
       child: Center(
         child: Text("Hello 1"),
       ),
     ),
-    const CartHistory(),
+    CartHistory(),
     Container(
       child: Center(
         child: Text("Hello 3"),
