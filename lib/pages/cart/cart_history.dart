@@ -44,6 +44,20 @@ class CartHistory extends StatelessWidget {
     // print(orderTime);
     var listCounter = 0;
 
+    Widget timeWidget(int index) {
+      var outputDate = DateTime.now().toString();
+      if (index < getCartHistoryList.length) {
+        DateTime parseDate = DateFormat("yyyy-MM-dd HH:mm:ss")
+            .parse(getCartHistoryList[listCounter].time!);
+        var inputDate = DateTime.parse(parseDate.toString());
+
+        var outputFormat = DateFormat("MM/dd/yyyy hh:mm aa");
+
+        outputDate = outputFormat.format(inputDate);
+      }
+      return BigText(text: outputDate);
+    }
+
     return Scaffold(
       body: Column(
         children: [
@@ -94,24 +108,8 @@ class CartHistory extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     // this is (ief) immediate invoked function to show date and time according to our need
-                                    (() {
-                                      // ! ERROR -> RangeError (RangeError (index): Invalid value: Not in inclusive range 0..6: 7)
-                                      DateTime parseDate = DateFormat(
-                                              "yyyy-MM-dd HH:mm:ss")
-                                          .parse(getCartHistoryList[listCounter]
-                                              .time!);
-                                      var inputDate =
-                                          DateTime.parse(parseDate.toString());
+                                    timeWidget(listCounter),
 
-                                      var outputFormat =
-                                          DateFormat("MM/dd/yyyy hh:mm aa");
-
-                                      var outputDate =
-                                          outputFormat.format(inputDate);
-                                      return BigText(text: outputDate);
-                                    }()),
-                                    // BigText(
-                                    //     text: getCartHistoryList[listCounter].time!),
                                     SizedBox(
                                       height: Dimensions.height10,
                                     ),
@@ -253,7 +251,7 @@ class CartHistory extends StatelessWidget {
                     height: MediaQuery.of(context).size.height / 1.5,
                     child: const Center(
                       child: NoDataPage(
-                        text: "You didn't buy anything so far!",
+                        text: "Sorry You didn't buy anything so far!",
                         imgPath: "assets/image/emptyCart2.jpg",
                       ),
                     ),
