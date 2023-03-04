@@ -10,8 +10,11 @@ class AppConstants {
   static const String APP_AUTHOR_LINKEDIN = "imtiyaj786";
   static const String APP_AUTHOR_INSTAGRAM = "imtiyaj.22";
   static const String BASE_URL = "http://mvs.bslmeiyu.com";
+  // http://127.0.0.1:8000
+  // http://127.0.0.1:8000/App/Http/Controllers/api/v1/products/popular
   static const String POPULAR_PRODUCT_URI = "/api/v1/products/popular";
   static const String RECOMMENDED_PRODUCT_URI = "/api/v1/products/recommended";
+  static const String DRINKS_URI = "/api/v1/products/drinks";
   static const String CATEGORY_URI = "/api/v1/categories";
   static const String UPLOAD_URL = "/uploads/";
   static const String TOKEN = "imtAlam23";
